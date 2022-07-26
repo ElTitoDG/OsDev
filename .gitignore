@@ -2,3 +2,4 @@
 build
 .DS_Store
 test.txt
+tools/fat/fat_mine.c
