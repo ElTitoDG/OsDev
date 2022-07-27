@@ -1,5 +1,7 @@
 ASM=nasm
 CC=clang
+CC16=/usr/bin/watcom/binl/wcc
+LD16=/usr/bin/watcom/binl/wlink
 
 TOOLS_DIR=tools
 SRC_DIR=src
