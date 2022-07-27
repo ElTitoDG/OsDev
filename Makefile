@@ -1,18 +1,18 @@
 ASM=nasm
-CC=clang
+CC=gcc
 CC16=/usr/bin/watcom/binl/wcc
 LD16=/usr/bin/watcom/binl/wlink
 
-TOOLS_DIR=tools
 SRC_DIR=src
+TOOLS_DIR=tools
 BUILD_DIR=build
 
-.PHONY: all floppy_image kernel bootloader clean always tools_fat run
-
+.PHONY: all floppy_image kernel bootloader clean always tools_fat
 
 all: floppy_image tools_fat
+
 #
-# Floppy Image
+# Floppy image
 #
 floppy_image: $(BUILD_DIR)/main_floppy.img
 
@@ -27,7 +27,6 @@ $(BUILD_DIR)/main_floppy.img: bootloader kernel
 #
 # Bootloader
 #
-
 bootloader: stage1 stage2
 
 stage1: $(BUILD_DIR)/stage1.bin
@@ -70,7 +69,6 @@ clean:
 	$(MAKE) -C $(SRC_DIR)/bootloader/stage2 BUILD_DIR=$(abspath $(BUILD_DIR)) clean
 	$(MAKE) -C $(SRC_DIR)/kernel BUILD_DIR=$(abspath $(BUILD_DIR)) clean
 	rm -rf $(BUILD_DIR)/*
-
 #
 # Run
 #
