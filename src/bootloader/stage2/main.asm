@@ -7,6 +7,7 @@ global entry
 
 entry:
   cli
+  ; setup stack
   mov ax, ds
   mov ss, ax
   mov sp, 0
