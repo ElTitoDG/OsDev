@@ -69,8 +69,3 @@ clean:
 	$(MAKE) -C $(SRC_DIR)/bootloader/stage2 BUILD_DIR=$(abspath $(BUILD_DIR)) clean
 	$(MAKE) -C $(SRC_DIR)/kernel BUILD_DIR=$(abspath $(BUILD_DIR)) clean
 	rm -rf $(BUILD_DIR)/*
-#
-# Run
-#
-run:
-	qemu-system-i386 -fda $(BUILD_DIR)/main_floppy.img
